@@ -1,0 +1,121 @@
+:root {
+    --bg-color: #f5f2eb;
+    --card-bg: #ffffff;
+    --primary-color: #3b4d61;
+    --accent-color: #2980b9; 
+    --error-color: #c0392b;
+    --brown-accent: #6b4f3b; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: var(--brown-accent);
+}
+
+main {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(107, 79, 59, 0.1);
+    width: 100%;
+    max-width: 600px;
+    border-top: 4px solid var(--brown-accent);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #faf9f6;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--accent-color);
+    border-color: transparent;
+}
+
+fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px 15px;
+    background-color: #faf9f6;
+}
+
+fieldset legend {
+    font-weight: bold;
+    color: var(--brown-accent);
+}
+
+fieldset label {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+button[type="submit"] {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1f618d; 
+}
+
+.is-invalid {
+    border-color: var(--error-color) !important;
+}
+
+.error-message {
+    font-size: 0.85rem;
+    color: var(--error-color);
+    margin-top: 5px;
+}
+
+small {
+    color: #7f8c8d;
+    margin-top: 4px;
+}

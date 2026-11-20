@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tech Experience 2026 - Inscrição nas Oficinas</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Tech Experience 2026</h1>
+            <p>Faça sua inscrição nas oficinas técnicas do evento acadêmico</p>
+        </header>
+
+        <main>
+            <form action="processar.php" method="post" id="form-inscricao">
+                <div class="form-group">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" required minlength="3">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" nome="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="experiencia">Nível de Experiência:</label>
+                    <select id="experiencia" name="experiencia" required>
+                        <option value="" disabled selected>Selecione seu nível...</option>
+                        <option value="iniciante">Iniciante</option>
+                        <option value="intermediario">Intermediário</option>
+                        <option value="avancado">Avançado</option>
+                    </select>
+                </div>
+
+                <fieldset class="form-group">
+                    <legend>Turno de preferência:</legend>
+                    <label><input type="radio" name="turno" value="manha" required> Manhã</label>
+                    <label><input type="radio" name="turno" value="noited" required> Noite</label>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <legend>Oficinas de interesse (selecione ao menos uma):</legend>
+                    <label><input type="checkbox" name="oficinas[]" value="html_css"> HTML5 e CSS3 Moderno</label>
+                    <label><input type="checkbox" name="oficinas[]" value="js_dom"> JavaScript e DOM Interativo</label>
+                    <label><input type="checkbox" name="oficinas[]" value="php_backend"> PHP Backend e Segurança</label>
+                    <span id="erro-oficinas" class="error-message" style="display:none; color: #d9534f;">Selecione pelo menos uma oficina.</span>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem / Motivação:</label>
+                    <textarea id="mensagem" name="mensagem" maxlength="200" placeholder="Escreva até 200 caracteres..."></textarea>
+                    <small id="contador-caracteres">Restam 200 caracteres</small>
+                </div>
+
+            <button type="submit">Confirmar Inscrição</button>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; 2026 Tech Experience. Desenvolvimento Web.</p>
+            <a href="#">Voltar ao topo</a>
+        </footer>
+    </body>
+</html>
