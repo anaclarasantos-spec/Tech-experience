@@ -1,16 +1,17 @@
 :root {
     --bg-color: #f5f2eb;
     --card-bg: #ffffff;
-    --primary-color: #3b4d61;
+    --primeira-color: #3b4d61;
     --accent-color: #2980b9; 
     --error-color: #c0392b;
-    --brown-accent: #6b4f3b; 
+    --marrom-accent: #6b4f3b; 
+    --borda-color: #d5d5d5;
 }
 
 body {
     font-family: Arial, sans-serif;
     background-color: var(--bg-color);
-    color: var(--primary-color);
+    color: var(--primeira-color);
     margin: 0;
     padding: 20px;
     display: flex;
@@ -24,17 +25,17 @@ header, footer {
 }
 
 header h1 {
-    color: var(--brown-accent);
+    color: var(--primary-color);
 }
 
-main {
+    main {
     background-color: var(--card-bg);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(107, 79, 59, 0.1);
     width: 100%;
     max-width: 600px;
-    border-top: 4px solid var(--brown-accent);
+    border-top: 4px solid var(--marrom-accent);
 }
 
 .form-group {
@@ -46,7 +47,7 @@ main {
 label {
     margin-bottom: 8px;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--primeira-color);
 }
 
 input[type="text"],
@@ -54,7 +55,7 @@ input[type="email"],
 select,
 textarea {
     padding: 10px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--borda-color);
     border-radius: 4px;
     font-size: 1rem;
     background-color: #faf9f6;
@@ -66,7 +67,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 fieldset {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--marrom-accent);
     border-radius: 4px;
     padding: 10px 15px;
     background-color: #faf9f6;
@@ -74,7 +75,7 @@ fieldset {
 
 fieldset legend {
     font-weight: bold;
-    color: var(--brown-accent);
+    color: var(--marrom-accent);
 }
 
 fieldset label {
