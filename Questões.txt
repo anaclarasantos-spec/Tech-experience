@@ -1,0 +1,43 @@
+Questão 1:
+a) Por que o código PHP original nunca chega ao navegador quando servido corretamente por HTTP?
+Porque o PHP é uma linguagem executada no servidor, e não no navegador. Quando o usuário acessa uma página PHP, o navegador envia uma requisição HTTP ao servidor. O servidor executa o código PHP e processa suas instruções. Depois disso, envia apenas o resultado da execução ao navegador, geralmente em formato HTML.
+
+b) Qual é o papel exato do interpretador PHP nesse fluxo e qual é o formato do conteúdo que ele efetivamente entrega como resposta?
+interpretador PHP é responsável por ler, interpretar e executar o código PHP no servidor. Ele processa as instruções, realiza operações e gera o conteúdo que será enviado ao navegador.
+
+Questão 2:
+a) Diferencie tecnicamente a forma de transmissão dos dados entre GET e POST:
+O método GET envia os dados pela URL, utilizando a Query String, deixando os parâmetros visíveis no endereço da página. É recomendado para pesquisas, filtros e paginação, pois permite compartilhar e favoritar URLs.
+método POST envia os dados no corpo (Body) da requisição HTTP, sem exibi-los diretamente na URL. É recomendado para cadastros, envio de formulários, alterações de dados e operações que modificam informações no servidor.
+
+b)Por que POST não garante segurança e qual tecnologia protege os dados?
+O método POST não garante segurança porque apenas altera a maneira como os dados são transmitidos, colocando-os no corpo da requisição, mas não realiza criptografia.
+A tecnologia indispensável para garantir o sigilo, a criptografia e a segurança ponta a ponta do tráfego na rede é o protocolo HTTPS (com criptografia TLS/SSL).
+
+Questão3:
+a) Defina o objetivo de cada uma dessas três etapas no ciclo de processamento do backend PHP:
+Normalização: prepara e padroniza os dados recebidos, removendo espaços desnecessários e organizando as informações antes da validação.
+Validação: verifica se os dados recebidos atendem aos requisitos e às regras estabelecidas pela aplicação.
+Escape de saída: transforma caracteres especiais antes de exibir os dados no HTML, evitando que conteúdos maliciosos sejam interpretados pelo navegador
+
+b)Exemplos práticos de funções nativas e a vulnerabilidade evitada:
+Validação: filter_var() ou mb_strlen()
+Normalização: trim()
+Escape de Saída: htmlspecialchars($dado, ENT_QUOTES, 'UTF-8')
+
+Questão 04:
+a) Por que dispensar a validação no backend é uma falha crítica de arquitetura e segurança?
+Porque o ambiente do cliente (navegador) nunca é confiável. Qualquer restrição em HTML5 ou JavaScript pode ser facilmente contornada, desativada ou ignorada pelo usuário
+
+b) Cenários em que validações do cliente são ignoradas e o papel de cada uma:
+1. O usuário desativa o JavaScript no navegador, impedindo a execução das validações programadas.
+2. O usuário utiliza o DevTools para remover ou modificar atributos HTML, como required e minlength.
+3. O usuário envia requisições diretamente por ferramentas como Postman, cURL ou scripts próprios.
+A validação no cliente, feita com HTML5 e JavaScript, tem como objetivo melhorar a experiência do usuário, fornecendo avisos e correções imediatas
+Já a validação no servidor, feita com PHP, é responsável por garantir a integridade, a consistência e a segurança dos dados recebidos.  ela é obrigatória mesmo quando já existem validações no navegador
+
+Questão 05:a) Função do operador de coalescência nula (??) e erro evitado:
+O operador ?? verifica se uma chave existe e não é nula; caso contrário, retorna um valor padrão de segurança (fallback). Ele evita o aviso/erro do PHP do tipo Undefined array key quando um campo não é enviado pelo formulário
+
+b) Como o HTML e o PHP trabalham com seleções múltiplas (oficinas[]) e validação:
+No HTML, usa-se o sufixo [] no atributo name="oficinas[]" para orientar o navegador a agrupar os valores selecionados em um array. No PHP, deve-se verificar com is_array() se o dado recebido é de fato um array, e iterar sobre os itens garantindo que cada um pertença estritamente a uma lista pré-definida de permissões (whitelist) utilizando in_array($item, $permitidos, true).
